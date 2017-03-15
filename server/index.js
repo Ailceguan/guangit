@@ -1,12 +1,18 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var fs = require('fs');
+var path=require('path');
 
 var app = express();
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+
+app.get('/index',function(req,res){
+    res.sendFile(path.resolve(__dirname,'..')+'/client/index.html')
+});
 
 app.get('/',function(req,res){
     fs.readFile(__dirname + '/public/data.json',function(err,data){
