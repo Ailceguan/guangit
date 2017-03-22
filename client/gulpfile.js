@@ -15,12 +15,12 @@ var gulp = require('gulp'),
 
 gulp.task('clean',function(){
   del('./dist');
-})
+});
 
 gulp.task('help',function(){
   console.log('gulp clean  ：  清空dist目录');
   console.log('gulp ')
-})
+});
 // scss
 gulp.task('scss', function() {
     return gulp.src('src/sass/**/*.scss')
